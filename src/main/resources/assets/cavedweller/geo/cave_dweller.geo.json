@@ -1,0 +1,421 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 10,
+				"visible_bounds_height": 5.5,
+				"visible_bounds_offset": [0, 2.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Cave_Dweller_Core",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body_Axis",
+					"parent": "Cave_Dweller_Core",
+					"pivot": [0, 42, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "Body_Axis",
+					"pivot": [0, 42, 0],
+					"rotation": [10, 0, 0]
+				},
+				{
+					"name": "Upper_Chest_Axis",
+					"parent": "Body",
+					"pivot": [0, 44, -18]
+				},
+				{
+					"name": "Upper_Chest",
+					"parent": "Upper_Chest_Axis",
+					"pivot": [0, 44, -18],
+					"cubes": [
+						{"origin": [-9, 40.4304, -28.77895], "size": [18, 12, 15], "pivot": [0, 46.9304, -19.77895], "rotation": [-27.5, 0, 0], "uv": [85, 97]}
+					]
+				},
+				{
+					"name": "Chest_Axis",
+					"parent": "Body",
+					"pivot": [0, 38, -2]
+				},
+				{
+					"name": "Chest",
+					"parent": "Chest_Axis",
+					"pivot": [0, 38, -2],
+					"cubes": [
+						{"origin": [-17, 26, -20], "size": [34, 22, 16], "pivot": [0, 32.5, -3], "rotation": [-17.5, 0, 0], "uv": [0, 74]}
+					]
+				},
+				{
+					"name": "Torso_Axis",
+					"parent": "Body",
+					"pivot": [0, 39, -2]
+				},
+				{
+					"name": "Torso",
+					"parent": "Torso_Axis",
+					"pivot": [0, 39, -2],
+					"cubes": [
+						{"origin": [-16, 28.87898, -7.7108], "size": [32, 17, 21], "pivot": [0, 33.87898, -5.7108], "rotation": [-5, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Waist_Axis",
+					"parent": "Body",
+					"pivot": [0, 37, 13]
+				},
+				{
+					"name": "Waist",
+					"parent": "Waist_Axis",
+					"pivot": [0, 37, 13],
+					"cubes": [
+						{"origin": [-14, 28.82321, 12.37409], "size": [28, 14, 16], "pivot": [0, 33.82321, 17.87409], "rotation": [2.5, 0, 0], "uv": [88, 58]}
+					]
+				},
+				{
+					"name": "Armor_Axis",
+					"parent": "Body",
+					"pivot": [0, 47, 1]
+				},
+				{
+					"name": "Armor",
+					"parent": "Armor_Axis",
+					"pivot": [0, 47, 1]
+				},
+				{
+					"name": "Front_Armor_Axis",
+					"parent": "Armor",
+					"pivot": [0, 47, 1]
+				},
+				{
+					"name": "Front_Armor",
+					"parent": "Front_Armor_Axis",
+					"pivot": [0, 47, 1],
+					"cubes": [
+						{"origin": [-10, 51.10612, -26.45373], "size": [20, 6, 15], "pivot": [-0.5, 55.60612, -16.95373], "rotation": [-20, 0, 0], "uv": [85, 0]},
+						{"origin": [-14, 46.10612, -13.45373], "size": [27, 9, 15], "uv": [91, 23]}
+					]
+				},
+				{
+					"name": "Back_Armor_Axis",
+					"parent": "Armor",
+					"pivot": [0, 47, 1]
+				},
+				{
+					"name": "Back_Armor",
+					"parent": "Back_Armor_Axis",
+					"pivot": [0, 47, 1],
+					"cubes": [
+						{"origin": [-13, 46.10612, -0.45373], "size": [25, 9, 27], "pivot": [-0.5, 55.60612, -16.95373], "rotation": [-7.5, 0, 0], "uv": [0, 38]},
+						{"origin": [-7, 41.4835, 24.58785], "size": [14, 7, 17], "pivot": [0, 44.9835, 33.08785], "rotation": [2.5, 0, 0], "uv": [100, 124]},
+						{"origin": [-4, 44.4835, 34.58785], "size": [7, 4, 17], "pivot": [0, 44.9835, 33.08785], "rotation": [-2.5, 0, 0], "uv": [176, 120]}
+					]
+				},
+				{
+					"name": "Neck_Axis",
+					"parent": "Body",
+					"pivot": [0, 53, -27]
+				},
+				{
+					"name": "Neck",
+					"parent": "Neck_Axis",
+					"pivot": [0, 53, -27],
+					"cubes": [
+						{"origin": [-6, 49.31164, -36.29543], "size": [12, 9, 12], "pivot": [0, 53.81164, -30.29543], "rotation": [-5, 0, 0], "uv": [187, 23]}
+					]
+				},
+				{
+					"name": "Head_Axis",
+					"parent": "Neck",
+					"pivot": [0, 56, -36]
+				},
+				{
+					"name": "Head",
+					"parent": "Head_Axis",
+					"pivot": [0, 56, -36],
+					"cubes": [
+						{"origin": [-5, 49.30188, -43.53528], "size": [10, 11, 9], "pivot": [0, 54.80188, -39.03528], "rotation": [10, 0, 0], "uv": [207, 105]},
+						{"origin": [-6.47323, 57.54605, -48.97727], "size": [3, 5, 14], "pivot": [-4.97323, 60.04605, -41.97727], "rotation": [37.04589, 2.99318, -17.25002], "uv": [211, 0]},
+						{"origin": [3.47323, 57.54605, -48.97727], "size": [3, 5, 14], "pivot": [4.97323, 60.04605, -41.97727], "rotation": [37.04589, -2.99318, 17.25002], "uv": [210, 127]},
+						{"origin": [-5.80492, 67.23525, -39.56439], "size": [3, 3, 14], "pivot": [-4.30492, 68.73525, -32.56439], "rotation": [39.45005, 18.76456, -4.68084], "uv": [173, 215]},
+						{"origin": [2.80492, 67.23525, -39.56439], "size": [3, 3, 14], "pivot": [4.30492, 68.73525, -32.56439], "rotation": [39.45005, -18.76456, 4.68084], "uv": [139, 215]},
+						{"origin": [-6, 51.70866, -52.74584], "size": [12, 7, 9], "pivot": [0, 55.20866, -48.24584], "rotation": [10, 0, 0], "uv": [198, 203]}
+					]
+				},
+				{
+					"name": "Jaw_Axis",
+					"parent": "Head",
+					"pivot": [0, 51, -42],
+					"rotation": [-2.5, 0, 0]
+				},
+				{
+					"name": "Jaw",
+					"parent": "Jaw_Axis",
+					"pivot": [0, 51, -43],
+					"cubes": [
+						{"origin": [-7, 45.05012, -46.94684], "size": [14, 6, 7], "pivot": [0, 48.05012, -45.94684], "rotation": [17.5, 0, 0], "uv": [34, 153]},
+						{"origin": [-7, 45.05012, -51.94684], "size": [14, 6, 12], "pivot": [0, 48.05012, -45.94684], "rotation": [17.5, 0, 0], "uv": [176, 68]},
+						{"origin": [-7, 51.05012, -51.94684], "size": [14, 4, 0], "pivot": [0, 48.05012, -45.94684], "rotation": [17.5, 0, 0], "uv": [84, 124]},
+						{"origin": [0, 49.01447, -60.17267], "size": [12, 4, 0], "pivot": [0, 51.01447, -53.17267], "rotation": [90, -72.5, -90], "uv": [77, 60]},
+						{"origin": [-12, 49.01447, -60.17267], "size": [12, 4, 0], "pivot": [0, 51.01447, -53.17267], "rotation": [90, 72.5, 90], "uv": [0, 60]}
+					]
+				},
+				{
+					"name": "Tail_Axis",
+					"parent": "Body",
+					"pivot": [0, 37, 27]
+				},
+				{
+					"name": "Tail_Base_Axis",
+					"parent": "Tail_Axis",
+					"pivot": [0, 39, 25]
+				},
+				{
+					"name": "Tail_Base",
+					"parent": "Tail_Base_Axis",
+					"pivot": [0, 39, 25],
+					"cubes": [
+						{"origin": [-8, 31.82321, 25.37409], "size": [16, 11, 12], "pivot": [0, 33.82321, 30.87409], "rotation": [2.5, 0, 0], "uv": [155, 0]}
+					]
+				},
+				{
+					"name": "Tail_Mid_Axis1",
+					"parent": "Tail_Base",
+					"pivot": [0, 38, 36],
+					"rotation": [5, 0, 0]
+				},
+				{
+					"name": "Tail_Mid1",
+					"parent": "Tail_Mid_Axis1",
+					"pivot": [0, 38, 36],
+					"cubes": [
+						{"origin": [-6, 34.45331, 35.25124], "size": [12, 9, 10], "pivot": [0, 39.95331, 37.25124], "rotation": [15, 0, 0], "uv": [201, 86]}
+					]
+				},
+				{
+					"name": "Tail_Mid_Axis2",
+					"parent": "Tail_Mid1",
+					"pivot": [0, 41, 43]
+				},
+				{
+					"name": "Tail_Mid2",
+					"parent": "Tail_Mid_Axis2",
+					"pivot": [0, 41, 43],
+					"cubes": [
+						{"origin": [-5, 37.47275, 42.59042], "size": [10, 8, 11], "pivot": [0, 43.47275, 44.59042], "rotation": [20, 0, 0], "uv": [111, 202]}
+					]
+				},
+				{
+					"name": "Tail_Mid_Axis3",
+					"parent": "Tail_Mid2",
+					"pivot": [0, 43, 51],
+					"rotation": [0, 0, 0]
+				},
+				{
+					"name": "Tail_Mid3",
+					"parent": "Tail_Mid_Axis3",
+					"pivot": [0, 43, 51],
+					"cubes": [
+						{"origin": [-4, 40.20891, 51.10796], "size": [8, 7, 10], "uv": [82, 213]}
+					]
+				},
+				{
+					"name": "Tail_End_Axis",
+					"parent": "Tail_Mid3",
+					"pivot": [0, 44, 60],
+					"rotation": [0, 2.5, 0]
+				},
+				{
+					"name": "Tail_End",
+					"parent": "Tail_End_Axis",
+					"pivot": [0, 44, 60],
+					"cubes": [
+						{"origin": [-2, 42.20891, 59.10796], "size": [4, 4, 11], "pivot": [0, 44.70891, 60.10796], "rotation": [-12.5, 0, 0], "uv": [34, 112]}
+					]
+				},
+				{
+					"name": "FR_Leg_Axis",
+					"parent": "Body",
+					"pivot": [-16, 44, -14]
+				},
+				{
+					"name": "FR_Leg",
+					"parent": "FR_Leg_Axis",
+					"pivot": [-16, 44, -14],
+					"cubes": [
+						{"origin": [-17.73347, 55.01284, -18.83431], "size": [5, 21, 8], "pivot": [-17.23347, 65.51284, -19.83431], "rotation": [-21.55454, -24.63093, 34.31539], "uv": [56, 212]},
+						{"origin": [-25.40873, 38.90544, -28.58694], "size": [5, 21, 14], "pivot": [-24.90873, 51.40544, -21.58694], "rotation": [-6.87818, -27.93251, 23.78244], "uv": [0, 185]},
+						{"origin": [-26, 25.5675, -18.68134], "size": [9, 25, 16], "pivot": [-24.5, 38.0675, -10.68134], "rotation": [17.5, 0, 0], "uv": [50, 112]}
+					]
+				},
+				{
+					"name": "FR_Lower_Leg_Axis",
+					"parent": "FR_Leg",
+					"pivot": [-22, 25, -8]
+				},
+				{
+					"name": "FR_Lower_Leg",
+					"parent": "FR_Lower_Leg_Axis",
+					"pivot": [-22, 25, -8],
+					"cubes": [
+						{"origin": [-23, 11.79847, -16.19383], "size": [3, 3, 11], "pivot": [-21.5, 18.79847, -11.19383], "rotation": [25, 0, 0], "uv": [223, 19]},
+						{"origin": [-25, 18.37746, -21.41898], "size": [7, 10, 20], "pivot": [-21.5, 21.37746, -5.41898], "rotation": [42.5, 0, 0], "uv": [80, 148]}
+					]
+				},
+				{
+					"name": "FR_Foot_Axis",
+					"parent": "FR_Lower_Leg",
+					"pivot": [-21, 13, -17]
+				},
+				{
+					"name": "FR_Foot",
+					"parent": "FR_Foot_Axis",
+					"pivot": [-21, 13, -17],
+					"cubes": [
+						{"origin": [-27, 36.37746, -26.41898], "size": [11, 3, 5], "pivot": [-21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [118, 50]},
+						{"origin": [-26, 26.37746, -26.41898], "size": [9, 10, 12], "pivot": [-21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [201, 44]}
+					]
+				},
+				{
+					"name": "FL_Leg_Axis",
+					"parent": "Body",
+					"pivot": [16, 44, -14]
+				},
+				{
+					"name": "FL_Leg",
+					"parent": "FL_Leg_Axis",
+					"pivot": [16, 44, -14],
+					"cubes": [
+						{"origin": [20.40873, 38.90544, -28.58694], "size": [5, 21, 14], "pivot": [24.90873, 51.40544, -21.58694], "rotation": [-6.87818, 27.93251, -23.78244], "uv": [84, 178]},
+						{"origin": [12.73347, 55.01284, -18.83431], "size": [5, 21, 8], "pivot": [17.23347, 65.51284, -19.83431], "rotation": [-21.55454, 24.63093, -34.31539], "uv": [30, 212]},
+						{"origin": [17, 25.5675, -18.68134], "size": [9, 25, 16], "pivot": [24.5, 38.0675, -10.68134], "rotation": [17.5, 0, 0], "uv": [0, 112]}
+					]
+				},
+				{
+					"name": "FL_Lower_Leg_Axis",
+					"parent": "FL_Leg",
+					"pivot": [22, 25, -8]
+				},
+				{
+					"name": "FL_Lower_Leg",
+					"parent": "FL_Lower_Leg_Axis",
+					"pivot": [22, 25, -8],
+					"cubes": [
+						{"origin": [18, 18.37746, -21.41898], "size": [7, 10, 20], "pivot": [21.5, 21.37746, -5.41898], "rotation": [42.5, 0, 0], "uv": [142, 128]},
+						{"origin": [20, 11.79847, -16.19383], "size": [3, 3, 11], "pivot": [21.5, 18.79847, -11.19383], "rotation": [25, 0, 0], "uv": [107, 221]}
+					]
+				},
+				{
+					"name": "FL_Foot_Axis",
+					"parent": "FL_Lower_Leg",
+					"pivot": [21, 13, -17]
+				},
+				{
+					"name": "FL_Foot",
+					"parent": "FL_Foot_Axis",
+					"pivot": [21, 13, -17],
+					"cubes": [
+						{"origin": [17, 26.37746, -26.41898], "size": [9, 10, 12], "pivot": [21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [196, 181]},
+						{"origin": [16, 36.37746, -26.41898], "size": [11, 3, 5], "pivot": [21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [146, 120]}
+					]
+				},
+				{
+					"name": "BR_Leg_Axis",
+					"parent": "Body",
+					"pivot": [-14, 35, 22]
+				},
+				{
+					"name": "BR_Leg",
+					"parent": "BR_Leg_Axis",
+					"pivot": [-14, 35, 22],
+					"cubes": [
+						{"origin": [-23, 26.46792, 11.64271], "size": [9, 16, 16], "pivot": [-21.5, 35.46792, 22.64271], "rotation": [47.5, 0, 0], "uv": [0, 153]},
+						{"origin": [-23.31075, 32.40061, 18.83671], "size": [6, 21, 14], "pivot": [-20.81075, 42.90061, 20.83671], "rotation": [-48.63446, -8.05834, 21.41153], "uv": [168, 158]},
+						{"origin": [-21.71278, 43.53835, 30.29906], "size": [6, 12, 8], "pivot": [-19.71278, 49.53835, 34.29906], "rotation": [-58.97737, 0.5017, 26.59739], "uv": [207, 219]}
+					]
+				},
+				{
+					"name": "BR_Lower_Leg_Axis",
+					"parent": "BR_Leg",
+					"pivot": [-19, 30, 15]
+				},
+				{
+					"name": "BR_Lower_Leg",
+					"parent": "BR_Lower_Leg_Axis",
+					"pivot": [-19, 30, 15],
+					"cubes": [
+						{"origin": [-22, 4.46792, 7.64271], "size": [7, 34, 10], "pivot": [-21.5, 35.46792, 22.64271], "rotation": [27.5, 0, 0], "uv": [50, 168]},
+						{"origin": [-24, 3.79847, 13.80617], "size": [3, 3, 11], "pivot": [-21.5, 18.79847, -11.19383], "rotation": [25, 0, 0], "uv": [159, 215]},
+						{"origin": [-24, 11.95317, 20.65391], "size": [3, 3, 11], "pivot": [-22.5, 19.45317, 22.15391], "rotation": [2.5, 0, 0], "uv": [136, 88]},
+						{"origin": [-18, 7.46792, 17.64271], "size": [0, 22, 7], "pivot": [-21.5, 35.46792, 22.64271], "rotation": [12.5, 0, 0], "uv": [77, 31]}
+					]
+				},
+				{
+					"name": "BR_Foot_Axis",
+					"parent": "BR_Lower_Leg",
+					"pivot": [-16, 5, 29]
+				},
+				{
+					"name": "BR_Foot",
+					"parent": "BR_Foot_Axis",
+					"pivot": [-16, 5, 29],
+					"cubes": [
+						{"origin": [-23, -18.62254, -26.41898], "size": [9, 10, 12], "pivot": [-21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [194, 146]},
+						{"origin": [-24, -8.62254, -26.41898], "size": [11, 3, 5], "pivot": [-21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [100, 88]}
+					]
+				},
+				{
+					"name": "BL_Leg_Axis",
+					"parent": "Body",
+					"pivot": [14, 35, 22]
+				},
+				{
+					"name": "BL_Leg",
+					"parent": "BL_Leg_Axis",
+					"pivot": [14, 35, 22],
+					"cubes": [
+						{"origin": [14, 26.46792, 11.64271], "size": [9, 16, 16], "pivot": [21.5, 35.46792, 22.64271], "rotation": [47.5, 0, 0], "uv": [151, 88]},
+						{"origin": [17.31075, 32.40061, 18.83671], "size": [6, 21, 14], "pivot": [20.81075, 42.90061, 20.83671], "rotation": [-48.63446, 8.05834, -21.41153], "uv": [161, 33]},
+						{"origin": [15.71278, 43.53835, 30.29906], "size": [6, 12, 8], "pivot": [19.71278, 49.53835, 34.29906], "rotation": [-58.97737, -0.5017, -26.59739], "uv": [114, 148]}
+					]
+				},
+				{
+					"name": "BL_Lower_Leg_Axis",
+					"parent": "BL_Leg",
+					"pivot": [19, 30, 15]
+				},
+				{
+					"name": "BL_Lower_Leg",
+					"parent": "BL_Lower_Leg_Axis",
+					"pivot": [19, 30, 15],
+					"cubes": [
+						{"origin": [15, 4.46792, 7.64271], "size": [7, 34, 10], "pivot": [21.5, 35.46792, 22.64271], "rotation": [27.5, 0, 0], "uv": [134, 158]},
+						{"origin": [21, 3.79847, 13.80617], "size": [3, 3, 11], "pivot": [21.5, 18.79847, -11.19383], "rotation": [25, 0, 0], "uv": [0, 220]},
+						{"origin": [18, 7.46792, 17.64271], "size": [0, 22, 7], "pivot": [21.5, 35.46792, 22.64271], "rotation": [12.5, 0, 0], "uv": [0, 31]},
+						{"origin": [21, 11.95317, 20.65391], "size": [3, 3, 11], "pivot": [22.5, 19.45317, 22.15391], "rotation": [2.5, 0, 0], "uv": [216, 66]}
+					]
+				},
+				{
+					"name": "BL_Foot_Axis",
+					"parent": "BL_Lower_Leg",
+					"pivot": [16, 5, 29]
+				},
+				{
+					"name": "BL_Foot",
+					"parent": "BL_Foot_Axis",
+					"pivot": [16, 5, 29],
+					"cubes": [
+						{"origin": [14, -18.62254, -26.41898], "size": [9, 10, 12], "pivot": [21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [156, 193]},
+						{"origin": [13, -8.62254, -26.41898], "size": [11, 3, 5], "pivot": [21.5, 21.37746, -5.41898], "rotation": [80, 0, 0], "uv": [91, 47]}
+					]
+				}
+			]
+		}
+	]
+}
