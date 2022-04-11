@@ -1,0 +1,32 @@
+{
+  "cave_dweller.idle": {
+    "subtitle": "cavedweller.cave_dweller.idle",
+    "sounds": [
+      {
+        "name": "cavedweller:cave_dweller/idle1",
+        "stream": true
+      },
+      {
+        "name": "cavedweller:cave_dweller/idle2",
+        "stream": true
+      },
+      {
+        "name": "cavedweller:cave_dweller/idle3",
+        "stream": true
+      }
+    ]
+  },
+  "cave_dweller.hurt": {
+    "subtitle": "cavedweller.cave_dweller.hurt",
+    "sounds": [
+      {
+        "name": "cavedweller:cave_dweller/hurt1",
+        "stream": true
+      },
+      {
+        "name": "cavedweller:cave_dweller/hurt2",
+        "stream": true
+      }
+    ]
+  }
+}

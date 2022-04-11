@@ -1,3 +1,8 @@
 {
-  "entity.cavedweller.cave_dweller": "Cave Dweller"
+  "entity.cavedweller.cave_dweller": "Cave Dweller",
+
+  "item.cavedweller.cave_dweller_spawn_egg": "Cave Dweller Spawn Egg",
+
+  "cavedweller.cave_dweller.idle": "Cave Dweller bellows",
+  "cavedweller.cave_dweller.hurt": "Cave Dweller hurts"
 }

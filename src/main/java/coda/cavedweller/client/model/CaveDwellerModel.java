@@ -19,6 +19,6 @@ public class CaveDwellerModel extends AnimatedGeoModel<CaveDwellerEntity> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(CaveDwellerEntity animatable) {
-        return null;
+        return new ResourceLocation(CaveDweller.MOD_ID, "animations/cavedweller.animation.json");
     }
 }

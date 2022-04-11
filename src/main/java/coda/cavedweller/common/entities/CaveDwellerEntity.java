@@ -1,6 +1,9 @@
 package coda.cavedweller.common.entities;
 
+import coda.cavedweller.registry.CDSounds;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,6 +19,10 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.IAnimationTickable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
@@ -40,12 +47,36 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
 
     @Nullable
     @Override
+    protected SoundEvent getHurtSound(DamageSource p_21239_) {
+        return CDSounds.CAVE_DWELLER_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return CDSounds.CAVE_DWELLER_IDLE.get();
+    }
+
+    @Nullable
+    @Override
     public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
         return null;
     }
 
     @Override
     public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController<>(this, "controller", 6, this::predicate));
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.walk", true));
+            return PlayState.CONTINUE;
+        }
+        else {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.idle", true));
+            return PlayState.CONTINUE;
+        }
     }
 
     @Override
