@@ -59,6 +59,12 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
 
     @Nullable
     @Override
+    protected SoundEvent getDeathSound() {
+        return CDSounds.CAVE_DWELLER_DEATH.get();
+    }
+
+    @Nullable
+    @Override
     public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
         return null;
     }

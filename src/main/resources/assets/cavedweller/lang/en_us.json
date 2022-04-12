@@ -4,5 +4,6 @@
   "item.cavedweller.cave_dweller_spawn_egg": "Cave Dweller Spawn Egg",
 
   "cavedweller.cave_dweller.idle": "Cave Dweller bellows",
-  "cavedweller.cave_dweller.hurt": "Cave Dweller hurts"
+  "cavedweller.cave_dweller.hurt": "Cave Dweller hurts",
+  "cavedweller.cave_dweller.death": "Cave Dweller dies"
 }

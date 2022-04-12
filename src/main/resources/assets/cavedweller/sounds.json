@@ -28,5 +28,14 @@
         "stream": true
       }
     ]
+  },
+  "cave_dweller.death": {
+    "subtitle": "cavedweller.cave_dweller.death",
+    "sounds": [
+      {
+        "name": "cavedweller:cave_dweller/death",
+        "stream": true
+      }
+    ]
   }
 }
