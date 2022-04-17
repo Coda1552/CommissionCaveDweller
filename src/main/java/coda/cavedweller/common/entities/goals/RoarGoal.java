@@ -26,11 +26,14 @@ public class RoarGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return true;
+        return this.mob.getTarget() != null && this.mob.distanceToSqr(this.mob.getTarget()) <= 25.0f;
     }
 
     @Override
     public void tick() {
+        System.out.println(mob.isRoaring());
+        System.out.println(timer);
+
         if (this.cooldownTimer < cooldown) {
             this.cooldownTimer++;
         } else {
@@ -55,6 +58,8 @@ public class RoarGoal extends Goal {
 
     @Override
     public void stop() {
+        this.timer = 0;
+        this.cooldownTimer = 0;
         mob.setRoaring(false);
     }
 }
