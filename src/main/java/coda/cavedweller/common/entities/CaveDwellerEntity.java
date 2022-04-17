@@ -1,6 +1,11 @@
 package coda.cavedweller.common.entities;
 
+import coda.cavedweller.common.entities.goals.RoarGoal;
 import coda.cavedweller.registry.CDSounds;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,6 +20,7 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -27,6 +33,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimationTickable {
+    private static final EntityDataAccessor<Boolean> ROARING = SynchedEntityData.defineId(CaveDwellerEntity.class, EntityDataSerializers.BOOLEAN);
     private final AnimationFactory factory = new AnimationFactory(this);
 
     public CaveDwellerEntity(EntityType<? extends Animal> p_27557_, Level p_27558_) {
@@ -43,6 +50,7 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
         this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, LivingEntity.class, 10.0F));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(3, new RoarGoal(this));
     }
 
     @Nullable
@@ -70,8 +78,30 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     }
 
     @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(ROARING, false);
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+
+        tag.putBoolean("roaring", this.isRoaring());
+    }
+
+    public boolean isRoaring() {
+        return this.entityData.get(ROARING);
+    }
+
+    public void setRoaring(boolean roaring) {
+        this.entityData.define(ROARING, roaring);
+    }
+
+    @Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController<>(this, "controller", 6, this::predicate));
+        data.addAnimationController(new AnimationController<>(this, "miscController", 6, this::miscPredicate));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -84,6 +114,16 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
             return PlayState.CONTINUE;
         }
     }
+
+    private <E extends IAnimatable> PlayState miscPredicate(AnimationEvent<E> event) {
+        if (isRoaring()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.roar", true));
+            return PlayState.CONTINUE;
+        }
+
+        return PlayState.CONTINUE;
+    }
+
 
     @Override
     public AnimationFactory getFactory() {
