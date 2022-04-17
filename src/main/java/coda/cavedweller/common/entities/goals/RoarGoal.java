@@ -26,7 +26,7 @@ public class RoarGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return mob.getRandom().nextFloat() > 0.5F;
+        return true;
     }
 
     @Override
@@ -51,5 +51,10 @@ public class RoarGoal extends Goal {
                 mob.setRoaring(false);
             }
         }
+    }
+
+    @Override
+    public void stop() {
+        mob.setRoaring(false);
     }
 }

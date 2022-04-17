@@ -95,7 +95,7 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     }
 
     public void setRoaring(boolean roaring) {
-        this.entityData.define(ROARING, roaring);
+        this.entityData.set(ROARING, roaring);
     }
 
     @Override
