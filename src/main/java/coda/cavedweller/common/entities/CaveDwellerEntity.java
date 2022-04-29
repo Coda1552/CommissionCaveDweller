@@ -62,7 +62,7 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
         boolean night = level.isNight();
 
         if (!isSleeping() && night) {
-            startSleeping(blockPosition());
+            startSleeping(blockPosition().below());
         }
         else if (isSleeping() && !night) {
             stopSleeping();
