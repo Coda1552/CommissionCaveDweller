@@ -26,7 +26,7 @@ public class RoarGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return this.mob.getTarget() != null && this.mob.distanceToSqr(this.mob.getTarget()) <= 25.0f;
+        return level.random.nextFloat() > 0.9F;
     }
 
     @Override

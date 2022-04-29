@@ -56,6 +56,19 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
         this.targetSelector.addGoal(0, new HurtByTargetGoal(this));
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+        boolean night = level.isNight();
+
+        if (!isSleeping() && night) {
+            startSleeping(blockPosition());
+        }
+        else if (isSleeping() && !night) {
+            stopSleeping();
+        }
+    }
+
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource p_21239_) {
@@ -108,7 +121,11 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
+        if (isSleeping()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.sleep", true));
+            return PlayState.CONTINUE;
+        }
+        else if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.walk", true));
             return PlayState.CONTINUE;
         }
