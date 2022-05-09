@@ -40,7 +40,7 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.3D).add(Attributes.MAX_HEALTH, 100.0D).add(Attributes.ATTACK_DAMAGE, 5.0D);
+        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.32D).add(Attributes.MAX_HEALTH, 100.0D).add(Attributes.ATTACK_DAMAGE, 5.0D);
     }
 
     @Override
@@ -59,14 +59,14 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     @Override
     public void tick() {
         super.tick();
-        boolean night = level.isNight();
+/*        boolean night = level.isNight();
 
         if (!isSleeping() && night) {
             startSleeping(blockPosition().below());
         }
         else if (isSleeping() && !night) {
             stopSleeping();
-        }
+        }*/
     }
 
     @Nullable
@@ -117,33 +117,35 @@ public class CaveDwellerEntity extends Animal implements IAnimatable, IAnimation
     @Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController<>(this, "controller", 6, this::predicate));
-        data.addAnimationController(new AnimationController<>(this, "miscController", 6, this::miscPredicate));
     }
 
+    // there is a much better way to do this :)
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (isSleeping()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.sleep", true));
             return PlayState.CONTINUE;
         }
         else if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.walk", true));
-            return PlayState.CONTINUE;
+            if (isRoaring()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.walkroar", false));
+                return PlayState.CONTINUE;
+            }
+            else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.walk", true));
+                return PlayState.CONTINUE;
+            }
         }
         else {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.idle", true));
-            return PlayState.CONTINUE;
+            if (isRoaring()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.idleroar", false));
+                return PlayState.CONTINUE;
+            }
+            else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.idle", true));
+                return PlayState.CONTINUE;
+            }
         }
     }
-
-    private <E extends IAnimatable> PlayState miscPredicate(AnimationEvent<E> event) {
-        if (isRoaring()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.cavedweller.roar", false));
-            return PlayState.CONTINUE;
-        }
-
-        return PlayState.CONTINUE;
-    }
-
 
     @Override
     public AnimationFactory getFactory() {

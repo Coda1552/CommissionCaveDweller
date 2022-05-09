@@ -37,5 +37,14 @@
         "stream": true
       }
     ]
+  },
+  "cave_dweller.roar": {
+    "subtitle": "cavedweller.cave_dweller.roar",
+    "sounds": [
+      {
+        "name": "cavedweller:cave_dweller/roar",
+        "stream": true
+      }
+    ]
   }
 }

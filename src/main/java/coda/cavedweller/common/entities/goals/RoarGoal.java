@@ -1,6 +1,7 @@
 package coda.cavedweller.common.entities.goals;
 
 import coda.cavedweller.common.entities.CaveDwellerEntity;
+import coda.cavedweller.registry.CDSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -26,7 +27,7 @@ public class RoarGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return level.random.nextFloat() > 0.9F;
+        return true;
     }
 
     @Override
@@ -41,9 +42,9 @@ public class RoarGoal extends Goal {
                 this.timer++;
                 mob.setRoaring(true);
                 this.mob.getNavigation().stop();
-                if (this.timer == 20) {
-                    this.mob.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);
-                    List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, mob.getBoundingBox().inflate(5));
+                if (this.timer == 10) {
+                    this.mob.playSound(CDSounds.CAVE_DWELLER_ROAR.get(), 1.0F, 1.0F);
+                    List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, mob.getBoundingBox().inflate(8));
                     for (LivingEntity entity : list) {
                         entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100));
                     }
